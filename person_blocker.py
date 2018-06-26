@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import os
 import sys
 import argparse
@@ -13,7 +14,8 @@ import visualize
 # Creates a color layer and adds Gaussian noise.
 # For each pixel, the same noise value is added to each channel
 # to mitigate hue shfting.
-
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 def create_noisy_color(image, color):
     color_mask = np.full(shape=(image.shape[0], image.shape[1], 3),
